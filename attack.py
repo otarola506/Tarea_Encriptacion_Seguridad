@@ -1,7 +1,7 @@
-from hash import hash_function
+from hashGrupo1 import FKS_Hash
 import sys
 
-def attack(dictionary_path):
+def hash_attack(dictionary_path):
     dictionary_file = open(dictionary_path, 'r')
     colissions_file = open('collisions.txt', 'w+')
     dic = dict() 
@@ -16,4 +16,15 @@ def attack(dictionary_path):
             print(hash_value + '     ->     ' + password + '               ' + hash_value)
             colissions_file.write(dic[hash_value]+ '      ' + password + '     ->     ' + hash_value + '\n')
 
-attack(sys.argv[1])
+def dictionary_attack(dictionary_path):
+    dictionary_file = open(dictionary_path, 'r')
+    given_hash_value = 'c77420476c0930b5b5c77420476c0930b5c77420476c0930b5c77420476c0931'
+    for password in dictionary_file:
+        password = password.rstrip('\n')
+        hash_grupo_4 = FKS_Hash(password, 256)
+        hash_grupo_4.checkSize()
+        hash_value = hash_grupo_4.hashAlgorithm()
+        if given_hash_value == hash_value:
+            print(password)
+
+dictionary_attack(sys.argv[1])
