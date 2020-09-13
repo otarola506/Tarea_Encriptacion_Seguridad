@@ -1,6 +1,5 @@
 from bitarray import bitarray
 from bitarray.util import *
-import sys
 
 bit_count = 160
 
@@ -36,7 +35,7 @@ def hash_function(string):
     current_bit = 0
     while(current_bit != len(processed_string)):
         internal_state = wrap_bitarray(processed_string[current_bit : current_bit + bit_count] + rightshift(internal_state, 2))
-        internal_state = wrap_bitarray(int2ba(wrap_int(ba2int(internal_state, signed=False) * 499979),length=bit_count))
+        internal_state = wrap_bitarray(int2ba(wrap_int(ba2int(internal_state, signed=False) * 499979), length=bit_count))
         internal_state = internal_state | int2ba(543, length=bit_count)
         internal_state = wrap_bitarray(int2ba(wrap_int(ba2int(internal_state, signed=False) * 81667), length=bit_count))
         internal_state = leftshift(internal_state, 2)
