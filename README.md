@@ -8,8 +8,8 @@ Tarea de encriptación irreversible para el curso de Seguridad de Sistemas Compu
 
 # Ataque de diccionario
 ## attack.py - dictionary_attack()
-1. ** Hash value entregado: ** 	`c77420476c0930b5b5c77420476c0930b5c77420476c0930b5c77420476c0931`
-2. ** Password encontrado: ** `GTAGTA`
+1. Hash value entregado por el grupo 1: 	`c77420476c0930b5b5c77420476c0930b5c77420476c0930b5c77420476c0931`
+2. Password encontrado: `GTAGTA`
 
 # Pruebas de seguridad aplicadas a hashGrupo1.py
 ## attack.py - hash_attack()
